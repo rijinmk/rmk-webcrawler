@@ -28,9 +28,14 @@ if(len(sys.argv) > 1):
                 print("Was a nice sleep, now let me continue...")
                 continue
 
-        print page.text
-
-        
+        bs = BeautifulSoup.BeautifulSoup(page.text)
+        links = bs.findAll('a') 
+        print len(links)
+        for i in links: 
+            time.sleep(2)
+            print i
+            print
+ 
     else: 
         print "Please enter a valid URL"
 
